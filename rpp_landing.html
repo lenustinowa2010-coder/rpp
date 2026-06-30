@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Спокойные отношения с едой — тренинг с Александрой Степановой</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#EDE7DD;
+    --bg-card:#F6F2EA;
+    --ink:#2C2A26;
+    --ink-soft:#5C574E;
+    --sage:#6E7F6A;
+    --sage-deep:#54624F;
+    --terra:#C2754E;
+    --line:#D4CCBD;
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:500;line-height:1.12;letter-spacing:-.01em}
+
+  /* HERO */
+  .hero{padding:84px 0 56px;text-align:left;position:relative;overflow:hidden}
+  .eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage-deep);font-weight:600;margin-bottom:22px}
+  .hero h1{font-size:clamp(38px,6vw,62px);max-width:14ch}
+  .hero h1 em{font-style:italic;color:var(--terra)}
+  .hero p.lede{font-size:clamp(17px,2.3vw,20px);color:var(--ink-soft);max-width:46ch;margin-top:24px}
+  .by{margin-top:28px;font-size:15px;color:var(--ink-soft)}
+  .by b{color:var(--ink);font-weight:600}
+
+  /* A→B route signature */
+  .route{margin:46px 0 8px;display:flex;align-items:center;gap:0;width:100%}
+  .dot{width:13px;height:13px;border-radius:50%;flex:0 0 auto}
+  .dot.a{background:var(--ink-soft)}
+  .dot.b{background:var(--terra)}
+  .route-line{flex:1;height:2px;background:linear-gradient(90deg,var(--ink-soft),var(--terra));position:relative}
+  .route-label{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+  .route-label.l{margin-right:14px}
+  .route-label.r{margin-left:14px;color:var(--terra)}
+
+  /* OFFER STRIP */
+  .offer{background:var(--sage-deep);color:#F4F1E8;border-radius:var(--radius);padding:38px 40px;margin:18px 0 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
+  .offer h2{color:#fff;font-size:26px;margin-bottom:6px}
+  .offer p{color:#DDE3D7;font-size:15px;max-width:42ch}
+  .price{font-family:'Fraunces',serif;font-size:40px;color:#fff;white-space:nowrap}
+  .price span{font-size:16px;color:#C9D2C2;font-family:'Inter'}
+  .btn{display:inline-block;background:var(--terra);color:#fff;text-decoration:none;font-weight:600;font-size:16px;padding:15px 30px;border-radius:999px;transition:transform .15s ease,background .2s ease;border:none;cursor:pointer}
+  .btn:hover{transform:translateY(-2px);background:#b06840}
+  .btn:focus-visible{outline:3px solid #fff;outline-offset:2px}
+
+  section{padding:64px 0}
+  .section-eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage-deep);font-weight:600;margin-bottom:14px}
+  h2.title{font-size:clamp(28px,4vw,40px);max-width:18ch;margin-bottom:8px}
+  .intro{color:var(--ink-soft);font-size:17px;max-width:54ch;margin-bottom:40px}
+
+  /* MODULES */
+  .mod{border-top:1px solid var(--line);padding:30px 0;display:grid;grid-template-columns:64px 1fr;gap:24px;align-items:start}
+  .mod:last-child{border-bottom:1px solid var(--line)}
+  .mod-num{font-family:'Fraunces',serif;font-size:30px;color:var(--terra);line-height:1}
+  .mod h3{font-size:21px;margin-bottom:8px}
+  .mod p{color:var(--ink-soft);font-size:15.5px}
+
+  /* RESULTS */
+  .results{background:var(--bg-card);border-radius:var(--radius);padding:48px 44px}
+  .results ul{list-style:none;margin-top:24px;display:grid;gap:14px}
+  .results li{padding-left:30px;position:relative;color:var(--ink-soft);font-size:16px}
+  .results li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:9px;border-radius:50%;background:var(--sage)}
+
+  /* FORMAT */
+  .format-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:8px}
+  .fcard{background:var(--bg-card);border-radius:var(--radius);padding:30px}
+  .fcard h3{font-size:19px;margin-bottom:10px}
+  .fcard p{color:var(--ink-soft);font-size:15px}
+
+  /* REVIEWS */
+  .reviews{display:grid;gap:22px;margin-top:8px}
+  .quote{background:var(--bg-card);border-left:3px solid var(--terra);border-radius:0 14px 14px 0;padding:26px 30px;font-size:16.5px;color:var(--ink);font-family:'Fraunces',serif;font-weight:400;font-style:italic;line-height:1.5}
+
+  /* CTA FINAL */
+  .final{background:var(--sage-deep);color:#F4F1E8;border-radius:var(--radius);padding:56px 44px;text-align:center;margin-top:8px}
+  .final h2{color:#fff;font-size:clamp(26px,4vw,36px);margin-bottom:14px}
+  .final p{color:#DDE3D7;max-width:46ch;margin:0 auto 28px;font-size:16px}
+  .final .price{display:block;margin-bottom:22px}
+
+  /* CARE NOTE */
+  .care{border:1px solid var(--line);border-radius:14px;padding:24px 28px;margin-top:40px;font-size:14px;color:var(--ink-soft);line-height:1.55}
+  .care b{color:var(--ink)}
+
+  footer{padding:40px 0 60px;text-align:center;color:var(--ink-soft);font-size:13px}
+
+  @media(max-width:680px){
+    .hero{padding:60px 0 40px}
+    .offer{flex-direction:column;align-items:flex-start;padding:30px 26px}
+    .format-grid{grid-template-columns:1fr}
+    .mod{grid-template-columns:48px 1fr;gap:16px}
+    .results,.final{padding:36px 24px}
+  }
+  @media(prefers-reduced-motion:reduce){.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <header class="hero">
+    <p class="eyebrow">Онлайн-тренинг</p>
+    <h1>Спокойные отношения с едой — <em>без диет и борьбы с собой</em></h1>
+    <p class="lede">Это не про то, как быстро похудеть. Это про то, чтобы понять, что на самом деле стоит за перееданием, и выйти из круга «сорвалась — виню себя — снова сорвалась».</p>
+    <p class="by">с дипломированным психологом <b>Александрой Степановой</b></p>
+
+    <div class="route" aria-hidden="true">
+      <span class="route-label l">Точка А</span>
+      <span class="dot a"></span>
+      <span class="route-line"></span>
+      <span class="dot b"></span>
+      <span class="route-label r">Точка Б</span>
+    </div>
+  </header>
+
+  <!-- OFFER STRIP -->
+  <div class="offer">
+    <div>
+      <h2>Начните с первого модуля</h2>
+      <p>Полноценный первый этап работы, а не урезанная версия. В своём темпе, с личной обратной связью на каждое задание. Доступ открывается сразу после оплаты.</p>
+    </div>
+    <div style="text-align:right">
+      <div class="price">990 ₽ <span>первый модуль</span></div>
+      <a href="#start" class="btn" style="margin-top:14px">Начать первый модуль</a>
+    </div>
+  </div>
+
+  <!-- MODULES -->
+  <section>
+    <p class="section-eyebrow">Маршрут</p>
+    <h2 class="title">Четыре модуля — от понимания причин к новому поведению</h2>
+    <p class="intro">Чтобы изменения стали устойчивыми, важно работать на нескольких уровнях. Этот курс построен как цельная система, а не набор разрозненных техник.</p>
+
+    <div class="mod">
+      <div class="mod-num">01</div>
+      <div>
+        <h3>Знакомство с собой и своим путём</h3>
+        <p>История проблемы, точка А и точка Б, «Волшебный вопрос», вторичные выгоды, поддерживающая среда. Вы поймёте не только «что» менять, но и «зачем» — и обопрётесь на образ своего будущего «Я».</p>
+      </div>
+    </div>
+
+    <div class="mod">
+      <div class="mod-num">02</div>
+      <div>
+        <h3>Самооценка и мешающие убеждения</h3>
+        <p>Работа с внутренним критиком, медитация на самопринятие, «письмо телу». Вы освободитесь от убеждений вроде «я слабая» или «у меня нет силы воли» и восстановите контакт с телом.</p>
+      </div>
+    </div>
+
+    <div class="mod">
+      <div class="mod-num">03</div>
+      <div>
+        <h3>Что на самом деле стоит за перееданием</h3>
+        <p>Исследование чувства-триггера, работа с потребностями и внутренним ребёнком, разрешение внутреннего конфликта. Вы научитесь видеть настоящую потребность — не в еде — за желанием поесть.</p>
+      </div>
+    </div>
+
+    <div class="mod">
+      <div class="mod-num">04</div>
+      <div>
+        <h3>Новое поведение и опора</h3>
+        <p>Альтернативное поведение вместо заедания, умение различать настоящий голод и насыщение, опора в моменты, когда привычка берёт верх. Срывы перестают быть катастрофой.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section>
+    <div class="results">
+      <p class="section-eyebrow">Что вы получите</p>
+      <h2 class="title" style="font-size:clamp(26px,3.6vw,34px)">Не просто знания, а пошаговый маршрут</h2>
+      <ul>
+        <li>Понятный план вместо случайных советов</li>
+        <li>Инструменты, которые останутся с вами</li>
+        <li>Свободу от постоянных мыслей о еде и контроля</li>
+        <li>Энергию, которая раньше уходила на борьбу с собой</li>
+        <li>Другие отношения с телом — без стыда и самокритики</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FORMAT -->
+  <section>
+    <p class="section-eyebrow">Как это устроено</p>
+    <h2 class="title">Формат, который подходит каждому</h2>
+    <div class="format-grid">
+      <div class="fcard">
+        <h3>В удобном мессенджере</h3>
+        <p>Курс идёт в Telegram, MAX или ВКонтакте — где удобно вам. Приходят задания и аудио-практики, в ответ вы отправляете выполненное и получаете следующее. В своём темпе.</p>
+      </div>
+      <div class="fcard">
+        <h3>Личное сопровождение</h3>
+        <p>Александра лично проверяет задания и даёт подробную обратную связь. Если возникают сложности — отправляет дополнительные практики. Вас ведут, а не оставляют наедине с материалом.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section>
+    <p class="section-eyebrow">Отзывы</p>
+    <h2 class="title">Что говорят те, кто уже прошёл</h2>
+    <div class="reviews">
+      <div class="quote">Я перепробовала кучу диет, но все они давали лишь обратный эффект. А сейчас поняла, что дело-то не в самой еде — научилась слушать своё тело, осознавать эмоции и помогать себе.</div>
+      <div class="quote">Ракурс с еды как будто сместился на другие аспекты жизни. Стараюсь относиться к себе с уважением, и внутри ощущается лёгкость.</div>
+      <div class="quote">Я перестала заедать всё, начала выпускать эмоции, стала меньше тревожиться. Очень приятно осознавать, что я могу просто быть.</div>
+      <div class="quote">Второй модуль помог почувствовать в теле зажатые эмоции, освободиться от тяжести «груза». Переедания иногда случаются, но с каждым разом их становится меньше.</div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="start">
+    <div class="final">
+      <h2>Готовы сделать первый шаг?</h2>
+      <p>Начните с первого модуля. Доступ открывается автоматически сразу после оплаты — дальше идёте в своём темпе, с поддержкой Александры на каждом задании.</p>
+      <span class="price" style="color:#fff">990 ₽</span>
+      <a href="#" class="btn">Начать первый модуль</a>
+    </div>
+
+    <!-- CARE NOTE -->
+    <div class="care">
+      <b>Важно.</b> Этот тренинг — психологическая работа с эмоциональным перееданием и отношениями с едой. Он не заменяет лечение при клиническом расстройстве пищевого поведения. Если Александра видит, что ситуация требует наблюдения врача, она скажет об этом лично и поможет сориентироваться, куда обратиться — чтобы вы получили именно ту помощь, которая вам подходит.
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">© Александра Степанова · тренинг «Спокойные отношения с едой»</div>
+</footer>
+
+</body>
+</html>
